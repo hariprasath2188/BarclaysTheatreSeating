@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+ 
+    <property name="log.pattern" value="%d %-5p \\(%logger{4}:%line\\) | %m%n"/>
+ 
+    <property name="log_dir" value="./logs" />
+    <property name="log_file" value="barclaysTheatreSeating.log"   />
+    <property name="max_size" value="10MB" />
+ 
+    <appender name="log-file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log_dir}/${log_file}</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${log.pattern}</pattern>
+        </encoder>
+ 
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>${log_dir}/${log_file}.%i</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>100</maxIndex>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>${max_size}</maxFileSize>
+        </triggeringPolicy>
+ 
+    </appender>
+ 
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${log.pattern}</pattern>
+        </encoder>
+    </appender>
+ 
+    <!-- Application Loggers -->
+    <logger name="com.barclay.card.theatre.api">
+        <level value="trace" />
+    </logger>
+ 
+    <!-- Spring Loggers -->
+    <logger name="org.springframework">
+        <level value="info" />
+    </logger>
+ 
+    <!-- Root Logger -->
+    <root>
+        <level value="info" />
+        <appender-ref ref="console" />
+        <appender-ref ref="log-file" />
+    </root>
+ 
+</configuration>
