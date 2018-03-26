@@ -38,7 +38,7 @@ public class BarclaycardTheatreSeatingApplicationTests {
     @Test
     public void testCaseOne() {
 
-	String uri = "http://localhost:" + port + "/api/v1/theatre/barclays/seating";
+	String uri = "http://localhost:" + port + "/api/v1/theatre/barclays/allocate/seat";
 	TestRestTemplate restTemplate = new TestRestTemplate();
 	RequestModel model = TestCaseOneUtils.createDefaultRequest();
 	try {
@@ -59,7 +59,7 @@ public class BarclaycardTheatreSeatingApplicationTests {
      */
     @Test
     public void testCaseTwo() {
-	String uri = "http://localhost:" + port + "/api/v1/theatre/barclays/seating";
+	String uri = "http://localhost:" + port + "/api/v1/theatre/barclays/allocate/seat";
 	TestRestTemplate restTemplate = new TestRestTemplate();
 	RequestModel model = TestCaseTwoUtils.createDefaultRequest();
 	try {
@@ -77,7 +77,7 @@ public class BarclaycardTheatreSeatingApplicationTests {
     
     @Test
     public void testCaseThree() {
-	String uri = "http://localhost:" + port + "/api/v1/theatre/barclays/seating";
+	String uri = "http://localhost:" + port + "/api/v1/theatre/barclays/allocate/seat";
 	TestRestTemplate restTemplate = new TestRestTemplate();
 	RequestModel model = TestCaseThreeUtils.createDefaultRequest();
 	try {

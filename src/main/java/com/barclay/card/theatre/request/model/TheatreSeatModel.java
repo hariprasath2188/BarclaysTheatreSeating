@@ -3,6 +3,7 @@ package com.barclay.card.theatre.request.model;
 import java.io.Serializable;
 import java.util.List;
 
+import com.barclay.card.theatre.model.Row;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
