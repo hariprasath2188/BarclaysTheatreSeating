@@ -31,7 +31,7 @@
         Testcase1 : Input Same as in Problem Statement.
         TestCase2 : All Negative cases - Either Split or Can't Handle.
         TestCase3 : All Positive cases - Set Row and Section for all parties.
-    d) Sample curl "curl -X POST -H "content-type:application/json" http://localhost:8081/api/v1/theatre/barclays/seating -d '{"seatMap":[{"row":"5,6"},{"row":"7,8"}],"seatReservation":[{"partyName":"Sam","seatsRequired":5},{"partyName":"John","seatsRequired”:6},{“partyName":"Bob","seatsRequired":6},{"partyName":"Mark","seatsRequired":7}]}'"
+    d) Sample curl "curl -X POST -H "content-type:application/json" http://localhost:8081/api/v1/theatre/barclays/allocate/seat -d '{"seatMap":[{"row":"5,6"},{"row":"7,8"}],"seatReservation":[{"partyName":"Sam","seatsRequired":5},{"partyName":"John","seatsRequired”:6},{“partyName":"Bob","seatsRequired":6},{"partyName":"Mark","seatsRequired":7}]}'"
     e) Sample output: {
        "response": [
         {

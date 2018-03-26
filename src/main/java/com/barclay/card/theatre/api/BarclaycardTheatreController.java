@@ -33,7 +33,7 @@ public class BarclaycardTheatreController {
     @Autowired
     private SeatingService seatingService;
 
-    @RequestMapping(value = "/theatre/barclays/seating", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/theatre/barclays/allocate/seat", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<BaseResponse> mapSeat(@RequestBody RequestModel model) {
 	String transactionId = UUID.randomUUID().toString();
 	logger.info("Transaction=" + transactionId + " Model from Request "
